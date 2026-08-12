@@ -18,7 +18,7 @@
 
 ## Download
 
-- **[Latest release &raquo;](../../releases/latest)** — download the `.zip`; it contains `Empower Smart Deploy.exe`. It's a signed, single-file Windows build that needs no installer.
+- **[Latest release &raquo;](../../releases/latest)** — download the `.zip`; it contains `Empower Smart Deploy.exe`. It's a single-file Windows build that needs no installer.
 - Or get it from the project website, where it **self-updates**: **https://empower.mhpwebserver.com**
   - **Lite Web Installer** — the exe; updates itself and syncs the install payload on demand.
   - **Offline Installer (ISO)** — the exe plus the full payload bundled for air-gapped machines.
