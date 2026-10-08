@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.43.0 (2026-10-08)
+
+### Changed
+- **A refreshed step list.** Numbered steps, a spinning ring on the step that is running, and a progress bar that fills one segment per step.
+
 ## v3.10.0.1-1.42.0 (2026-10-07)
 
 ### Added
