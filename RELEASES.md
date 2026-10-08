@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.43.3 (2026-10-08)
+
+### Fixed
+- **The ring on the running step turns.** Since 1.43.0 it stood still on many computers while the step was running. It now turns once a second for as long as the step runs.
+
 ## v3.10.0.1-1.43.2 (2026-10-08)
 
 ### Fixed
