@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.43.1 (2026-10-08)
+
+### Fixed
+- **The running step's ring spins again.** On computers where Windows' window animations are turned off — Remote Desktop sessions and servers set for best performance — the ring on the running step stood still. It now always turns while a step is running.
+
 ## v3.10.0.1-1.43.0 (2026-10-08)
 
 ### Changed
