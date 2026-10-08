@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.43.4 (2026-10-08)
+
+### Changed
+- **The window stays responsive while a step runs.** Each step does its work in the background, so the window can be moved and Cancel answers straight away while a step is busy.
+
 ## v3.10.0.1-1.43.3 (2026-10-08)
 
 ### Fixed
