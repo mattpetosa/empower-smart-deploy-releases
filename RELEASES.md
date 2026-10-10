@@ -2,6 +2,22 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.44.0 (2026-10-10)
+
+### Added
+- **Prep keeps the machine and its devices awake.** Three new Prep System steps, each checked after it is set:
+  - **Never sleep:** sleep, hibernate and hard-disk power-down are set to never, and USB selective suspend and PCI Express power saving are turned off, on mains and battery power, whichever power plan is active.
+  - **Devices can't be turned off to save power:** "Allow the computer to turn off this device to save power" is unticked on every network adapter, USB controller and hub, and USB device (instruments, serial adapters, dongles).
+  - **Network adapter power saving off:** Energy-Efficient Ethernet, Green Ethernet and similar adapter features are turned off where the adapter offers them. Takes effect after the restart.
+- **Check System reports all three** without changing anything, like the rest of the Prep checks.
+- **Post-Install sets up Waters Database Manager's backups on the database server.** Done the same way WDM's own pages do it, and checked afterwards:
+  - **Backup location** set to the DRBackups folder, with write access for the Oracle jobs account. The existing size limit is kept, with a warning if it looks too small for two full backups.
+  - **Weekly full backup** on Sundays at 02:00 and a **nightly incremental** every day at 23:00, both enabled.
+  - **First full backup** run straight away and checked: the backup, the control file and both wallet files must be in the new backup folder. If an automatic deployment has to ask for the SYS password on the Completed page, the backup is started there and its result shows in WDM.
+  - **If this app had to create the Oracle jobs account**, WDM is given its new password first, so the backup jobs can log on. If the account can't be created, or WDM can't be given the password, it's an error on the Completed page that says what to set by hand.
+  - **WDM's OS Job user is checked** against this computer's name, with a warning and the fix if the computer was renamed.
+- **The database SYS password can be entered with the server install options** (optional, not kept after the deployment). Otherwise Post-Install asks for it, or, in an automatic deployment, asks on the Completed page.
+
 ## v3.10.0.1-1.43.4 (2026-10-08)
 
 ### Changed
