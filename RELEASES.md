@@ -2,6 +2,16 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.44.1 (2026-10-11)
+
+### Fixed
+- **A license key the licensing server refuses is no longer saved.** It used to replace the previous key and keep working while the computer was offline.
+- **The settings folder in ProgramData is now open to administrators only.** It holds the license key, and the SYS password from the install options for a short time while the app restarts to update during a deployment; other users on the computer could read it before.
+- **Downloads no longer re-check every file each time.** The record of files already verified couldn't be read back, so each sync re-checked the whole download folder.
+
+### Removed
+- **Unpacking a Client.zip found next to the app when the server can't be reached.** That came from the old pre-built offline ISO and wasn't signed. For a computer without internet, make an offline disc with the website's ISO builder, whose file list is signed and checked before anything is copied.
+
 ## v3.10.0.1-1.44.0 (2026-10-10)
 
 ### Added
