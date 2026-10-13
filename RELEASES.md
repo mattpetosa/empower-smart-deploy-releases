@@ -2,6 +2,29 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.45.0 (2026-10-13)
+
+### Changed
+- **Built on the shared Smart Tools engine, the same one Empower Smart Recovery uses.** Steps, prompts, activation, updates and run logs now work the same way in both apps.
+- **Prompts no longer replace each other.** A second prompt opens on top of the first, and the first one comes back once the second is answered.
+- **Cancelling a prompt ends the run as cancelled.** If you cancel a question a step needs (time zone, .NET version, install type or options, machine type, Oracle jobs account, Waters Driver Pack, activation), that step shows "Skipped", the steps after it show "Not run — cancelled", and the run log records the run as cancelled instead of reporting errors. A network timeout inside a step now fails that step instead of ending the run as if you had cancelled.
+- **Pressing Start rebuilds the checklist first,** so it reflects the computer as it is at that moment (for example, Install Drivers looks in C:\Client\Drivers again).
+- **Activation.** The activation prompt links to the license page ("Open the license page"); request a key there and choose Deploy. A key for another Smart Tools app is now explained as such when it doesn't validate.
+- **Check for updates keeps checking even when the license can't be confirmed.** The check for a newer version still runs, and you can enter a new key at the end. Its steps are now Activation server, Check for a newer version, Download and Ready.
+- **The "update ready" prompt waits until a running task finishes.** It no longer interrupts a run; the Relaunch button at the top offers the update afterwards.
+- **Updates are applied by a safer swap.** The new version is renamed into place, and the previous one is put back if that fails. Updates are no longer downloaded into C:\Client\Updates.
+- **Roll back lists only builds that carry a release signature, newest first.** If a build can't be downloaded or verified, one short message says so.
+- **The window fits small screens,** such as 1024×768 Remote Desktop sessions. After an update relaunch it is restored and brought to the front.
+- **The step list follows the running step.** Scroll up and it stays where you are; it follows again when you scroll back to the bottom or the next step starts.
+- **Run logs:** small wording changes in the header lines.
+
+### Added
+- **Unexpected errors are written to a crash log:** `C:\Client\Logs\Empower Smart Deploy\ESD_crash_<time>.log`.
+
+### Fixed
+- **Activating from the top of the window no longer saves a key the licensing server refuses.** (1.44.1 fixed this for the download step only.)
+- **Single-button notices show one OK button,** without an empty second button beside it.
+
 ## v3.10.0.1-1.44.1 (2026-10-11)
 
 ### Fixed
