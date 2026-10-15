@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.46.2 (2026-10-14)
+
+### Fixed
+- **The first full backup no longer stops the run as soon as it starts.** Post-Install's "WDM: first full backup (runs now)" step failed with "its time zone is , not a named zone" even though the backup had been set up correctly. Waters runs that backup straight away rather than at a scheduled time, so it has no time zone to check. The step now waits for the backup to finish and checks the backup files as before.
+
 ## v3.10.0.1-1.46.1 (2026-10-14)
 
 ### Changed
