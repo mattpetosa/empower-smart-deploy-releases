@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.46.1 (2026-10-14)
+
+### Changed
+- **The header's license chip just says "Licensed".** The full text (who it's licensed to and when it expires) was long enough to push the Auto button out of sight, especially right after an update. Click **Licensed** to see who the license is for, when it expires, its license ID and when this computer last checked in, with a button to enter a different key.
+
 ## v3.10.0.1-1.46.0 (2026-10-14)
 
 ### Added
