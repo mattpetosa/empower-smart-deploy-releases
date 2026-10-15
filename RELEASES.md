@@ -2,6 +2,21 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.46.0 (2026-10-14)
+
+### Added
+- **Install Empower checks the account before a server install.** It runs the same administrator check Oracle's database build uses (admin rights through a domain group such as Domain Admins count). If Oracle would refuse the account, the install used to hang with no database; now you're offered to add the account to the computer's Administrators group before anything starts (in an automatic deployment, on the first screen).
+- **Install Empower watches Oracle's database build.** If the build fails, Smart Deploy stops Waters' installer within seconds and shows Oracle's reason and what to do, instead of waiting for hours. If the installer looks stuck (sqlplus waiting with no database behind it) or runs longer than two hours, the step says so.
+- **Post-Install installs Waters Database Manager if it's missing.** On the database server, a new step installs WDM from the Empower media the same way the Empower installer does, for when the main install stopped before reaching it. It's skipped when WDM is already installed.
+- **Post-Install tests the connection to each Empower database.** Every name in the machine's tnsnames.ora is tried through the Empower Oracle client, and the step says plainly what failed: the name or server couldn't be found, nothing is listening on port 1521, the server answered but the Empower database isn't open, or a firewall timed it out. It uses a made-up login, so no real account or password is needed.
+- **Clients and LAC/E machines can connect to several databases.** The install form's **Databases** box takes `NAME = SERVER` pairs, for example `PROD = EMPSRV01; VAL = EMPSRV02; DEV = EMPSRV03`. NAME is what Empower shows at login, and a server on its own is named after itself. A pasted `\\SERVER\Client$` path works too.
+
+### Changed
+- **Clients write their own tnsnames.ora instead of copying it from the database server.** Each database gets an entry with Empower's standard port (1521) and database (EMPPDB1), so a client no longer needs the server to be finished or its Client$ share to be reachable. A tnsnames.ora already on the machine keeps its entries, and is backed up before anything is added. If a name is already there pointing at a different server, it isn't changed and the step says so.
+- **IQ folders are named after the organization and the machine type,** for example `C:\Client\Acme_ServerIQ`, `Acme_ClientIQ` or `Acme_LaceIQ`, using the install form's Username / Organization. Prep asks for both when it's run on its own (an automatic deployment already has them). Anything in an older `C:\Client\IQ` folder is moved into the new one.
+- **Install Empower reports "Full installation failed" from Waters' log as a failure** and points to the MSI and Oracle logs.
+- **Post-Install's WDM backup steps try Waters' default SYS password first.** It's read from the Empower media, so on a fresh install the backup location and schedules are set without asking (and an automatic deployment no longer leaves them for the Completed page). You're asked for the SYS password only if it has been changed.
+
 ## v3.10.0.1-1.45.0 (2026-10-13)
 
 ### Changed
