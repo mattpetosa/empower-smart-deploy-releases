@@ -2,6 +2,26 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.47.0 (2026-10-23)
+
+### Changed
+- **License keys now name their app.** New keys from the license page start with ESD-, are shorter, and use only capital letters and digits in groups of five; when you enter one, case, spaces, line breaks and dashes don't matter. Keys issued before keep working, and a computer that is already activated needs nothing new.
+- **A refused license key says why:** a character looks mistyped, the key is for another Smart Tools app (the message names it), or the text isn't a license key at all.
+- **A license no longer carries over to a cloned or copied server; a copy must be activated online once.** Replacing a server's motherboard, or a virtual machine that gets a new BIOS ID when it is imported or restored, counts as a move too.
+
+### Fixed
+- **A license key pasted from an email where it wraps onto a second line is no longer cut off** at the line break.
+- **Windows in another language.** Service checks, the firewall check and the DEP step no longer depend on English command output. On a non-English Windows a missing service could read as present (so Waters Database Manager wasn't installed), a firewall that was still on could read as off, and a DEP change that worked could read as failed. The Client$ and Waters_Projects$ permissions are now granted to the standard Windows accounts whatever their local names are.
+- **Share Empower Projects checks its work.** The step said the share was made even when it wasn't. Both share steps now say if a folder permission couldn't be applied.
+- **One unreadable file no longer stops a Client sync.** A file in C:\Client that couldn't be read (in use, or locked by antivirus) failed the whole sync, and the files after it were never tried. It's now downloaded again, and the rest of the sync carries on.
+- **Cancelling no longer leaves Empower or driver ISOs mounted.** The patch ISO stays mounted only while the patch installer is still running.
+- **Cleanup removes the license from the running app too.** Before, the header still said "Licensed" after Cleanup, and the next change saved the license back.
+- **Install Chrome** stops when you press Cancel, and it warns if Chrome's installer reports a failure.
+- **A driver package that ships as a zip is unpacked again** if an earlier unpack didn't finish, or if a newer zip has been downloaded.
+- **The database alias** on the server install form must be a valid net service name (letters, digits, `_ . -`). A space in it used to write an entry Oracle couldn't read.
+- **The SYS password no longer lingers in a temporary file.** Installing Waters Database Manager needs its answers file, which holds the database SYS password. It's now written to a folder of its own that only administrators and the system can open, made fresh for each install and removed afterwards. A copy left behind by an interrupted run, including one in the old place in your temp folder, is deleted the next time Smart Deploy starts.
+- **A startup problem no longer closes the app.** It's written to the crash log and the window stays open.
+
 ## v3.10.0.1-1.46.2 (2026-10-14)
 
 ### Fixed
