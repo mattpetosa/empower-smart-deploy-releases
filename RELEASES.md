@@ -2,6 +2,12 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.47.1 (2026-10-30)
+
+### Changed
+- **Report Bugs, bottom right.** The author credit in the footer is replaced by a **Report Bugs** button with a bug icon. It opens the bug form of Smart Tools Feedback on GitHub — the one place to report a problem with any Smart Tools app — with the title already tagged **[Smart Deploy]** and the "Which app?" line filled in with Smart Deploy and the exact version you're running. Nothing else is sent: it is a public page, so no paths, server or database names, or anything from your logs go into it. Describe what happened, what you expected and how to repeat it, and submit.
+- **A license key for another app says which one, with its current name.** Entering a key that belongs to a different Smart Tools app still refuses it and names the app it is for; a Project Mover/ESPM- key is now named Empower Smart Project Migration, the tool's new name.
+
 ## v3.10.0.1-1.47.0 (2026-10-23)
 
 ### Changed
