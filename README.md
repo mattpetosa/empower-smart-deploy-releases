@@ -9,12 +9,12 @@
 <p align="center">
   <a href="../../releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/mattpetosa/empower-smart-deploy-releases?label=download&color=5EEAD4"></a>
   &nbsp;·&nbsp; <a href="https://empower.mhpwebserver.com">Website</a>
-  &nbsp;·&nbsp; <a href="../../issues/new">Report an issue</a>
+  &nbsp;·&nbsp; <a href="https://github.com/mattpetosa/smart-tools-feedback/issues/new/choose">Report an issue</a>
 </p>
 
 ---
 
-> This is the **public distribution** repo — downloads and issue tracking only. The application source is maintained privately.
+> This is the **public distribution** repo — downloads only. The application source is maintained privately.
 
 ## Download
 
@@ -115,7 +115,7 @@ Hardware and OS checks are graded against the **Waters Empower 3.10.0 Recommende
 
 ## Report an issue
 
-Found a bug or have a request? **[Open an issue »](../../issues/new)** and include:
+Found a bug or have a request? **[Open an issue in Smart Tools Feedback »](https://github.com/mattpetosa/smart-tools-feedback/issues/new/choose)** and include:
 
 - the **app version** (shown in the title bar),
 - the **machine role** (Client / LAC-E / Server), and
