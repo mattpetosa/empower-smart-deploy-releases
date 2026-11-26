@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-deploy-releases/releases) page.
 
+## v3.10.0.1-1.47.2 (2026-11-26)
+
+### Fixed
+- **Icons no longer show as empty squares on older Windows.** The app now carries its own icon font, so its icons look the same on every version of Windows, including those before Windows 10 and Windows Server 2016.
+
 ## v3.10.0.1-1.47.1 (2026-10-30)
 
 ### Changed
